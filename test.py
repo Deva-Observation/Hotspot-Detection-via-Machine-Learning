@@ -15,7 +15,7 @@ def test_model(model,device,test_loader):
             pred=output.argmax(dim=1)
             correct+=pred.eq(label.view_as(pred)).sum().item()
         test_loss/=len(test_loader.dataset)
-        print('Test_average_loss:{:.4f},Accuracy:{:3f}\n'.format(
+        print('Val_average_loss:{:.4f},Accuracy:{:3f}\n'.format(
             test_loss,100*correct/len(test_loader.dataset)
         ))
         acc=100*correct/len(test_loader.dataset)
